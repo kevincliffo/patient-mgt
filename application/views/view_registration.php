@@ -81,6 +81,8 @@
                                     <span class="fas fa-lock"></span>
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-group">
                             <input class="form-control" style="display:none;" id="errorMessage" readonly />
                         </div>
                         <div class="d-flex justify-content-between">
@@ -152,6 +154,27 @@
                     btn.disabled = true;
                 }
             }
+        </script>
+
+        <script>
+            function rePasswordEntered(){
+                var passwd = document.getElementById("password");
+                var repasswd = document.getElementById("rePassword");
+                var errmsg = document.getElementById("errorMessage");
+                //var btn = document.getElementById("register");
+
+                errmsg.value = ''
+                errmsg.style.display = 'none';
+                //btn.disabled = false;
+
+                if(passwd.value != repasswd.value)
+                {
+                    errmsg.style.display = 'block';
+                    errmsg.style.color = 'red';
+                    errmsg.value = 'Passwords do not Match!';
+                    //btn.disabled = true;
+                }
+            }            
         </script>
     </body>
 </html>
