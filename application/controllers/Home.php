@@ -146,6 +146,7 @@ class Home extends CI_Controller {
                 $this->session->set_userdata('userName', $ret['UserName']);
                 $this->session->set_userdata('email', $ret['Email']);
                 $this->session->set_userdata('userType', $ret['UserType']);
+                $this->session->set_userdata('profileImage', $ret['ProfileImage']);
                 $this->session->set_userdata('loggedIn', TRUE);
                 $this->session->set_userdata('showViewMenu', FALSE);
                 redirect('dashboard');

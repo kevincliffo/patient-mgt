@@ -61,14 +61,24 @@ class Model_Users extends CI_Model {
         $query = $this->db->get('users');
         
         if($query->num_rows() > 0){
+            if($query->result_array()[0]['ProfileImage'] == '')
+            {
+                $profileImage = 'user-placeholder.png';
+            }
+            else
+            {
+                $profileImage = $query->result_array()[0]['ProfileImage'];
+            }
+
             $ret = array(
-                'errorFound' => FALSE,
-                'message'    => 'User Found',
-                'Email'      => $query->result_array()[0]['Email'],
-                'FirstName'  => $query->result_array()[0]['FirstName'],
-                'LastName'   => $query->result_array()[0]['LastName'],
-                'UserType'   => $query->result_array()[0]['UserType'],
-                'UserName'   => $query->result_array()[0]['UserName']
+                'errorFound'   => FALSE,
+                'message'      => 'User Found',
+                'Email'        => $query->result_array()[0]['Email'],
+                'FirstName'    => $query->result_array()[0]['FirstName'],
+                'LastName'     => $query->result_array()[0]['LastName'],
+                'UserType'     => $query->result_array()[0]['UserType'],
+                'UserName'     => $query->result_array()[0]['UserName'],
+                'ProfileImage' => $profileImage
             );
             
             $this->updateLastLogin($this->input->post('email'));
@@ -76,13 +86,14 @@ class Model_Users extends CI_Model {
         }
 
         return array(
-            'errorFound' => TRUE,
-            'message'    => 'User not Found',
-            'Email'      => '',
-            'FirstName'  => '',
-            'LastName'   => '',
-            'UserType'   => '',
-            'UserName'   => '',
+            'errorFound'   => TRUE,
+            'message'      => 'User not Found',
+            'Email'        => '',
+            'FirstName'    => '',
+            'LastName'     => '',
+            'UserType'     => '',
+            'UserName'     => '',
+            'ProfileImage' => ''
         );
     }
 
