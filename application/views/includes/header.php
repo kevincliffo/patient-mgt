@@ -216,9 +216,33 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-user-shield"></i>
+                                <i class="nav-icon fas fa-user-md"></i>
                                 <p>
-                                    Clients
+                                    Consultants
+                                    <i class="fas fa-angle-left right"></i>
+                                    <!-- <span class="badge badge-info right">6</span> -->
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="users" class="nav-link">
+                                        <i class="fas fa-users nav-icon"></i>
+                                        <p>View Consultants</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="add-user" class="nav-link">
+                                        <i class="fas fa-user-plus nav-icon"></i>
+                                        <p>Add Consultant</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-hospital-user"></i>
+                                <p>
+                                    Patients
                                     <i class="fas fa-angle-left right"></i>
                                     <!-- <span class="badge badge-info right">6</span> -->
                                 </p>
@@ -227,22 +251,22 @@
                                 <li class="nav-item">
                                     <a href="clients" class="nav-link">
                                         <i class="fas fa-users nav-icon"></i>
-                                        <p>View Clients</p>
+                                        <p>View Patients</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="add-client" class="nav-link">
                                         <i class="fas fa-user-plus nav-icon"></i>
-                                        <p>Add Client</p>
+                                        <p>Add Patient</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-project-diagram"></i>
+                                <i class="nav-icon fas fa-calendar-check"></i>
                                 <p>
-                                    Projects
+                                    Appointments
                                     <i class="fas fa-angle-left right"></i>
                                     <!-- <span class="badge badge-info right">6</span> -->
                                 </p>
@@ -251,22 +275,22 @@
                                 <li class="nav-item">
                                     <a href="projects" class="nav-link">
                                         <i class="fas fa-tasks nav-icon"></i>
-                                        <p>View Projects</p>
+                                        <p>View Appointments</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="add-project" class="nav-link">
-                                        <i class="fas fa-user-check nav-icon"></i>
-                                        <p>Add Project</p>
+                                        <i class="fas fa-file-medical nav-icon"></i>
+                                        <p>Add Appointment</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tasks"></i>
+                                <i class="nav-icon fas fa-clinic-medical"></i>
                                 <p>
-                                    Internal Tasks
+                                    Clinics
                                     <i class="fas fa-angle-left right"></i>
                                     <!-- <span class="badge badge-info right">6</span> -->
                                 </p>
@@ -274,23 +298,23 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="tasks" class="nav-link">
-                                        <i class="fas fa-tasks nav-icon"></i>
-                                        <p>View Tasks</p>
+                                        <i class="fas fa-clinic-medical nav-icon"></i>
+                                        <p>View Clinics</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="add-task" class="nav-link">
                                         <i class="fas fa-plus nav-icon"></i>
-                                        <p>Add Task</p>
+                                        <p>Add Clinic</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-folder"></i>
+                                <i class="nav-icon fas fa-file"></i>
                                 <p>
-                                    Documents
+                                    Reports
                                     <i class="fas fa-angle-left right"></i>
                                     <!-- <span class="badge badge-info right">6</span> -->
                                 </p>
@@ -299,30 +323,13 @@
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="fas fa-folder-open nav-icon"></i>
-                                        <p>
-                                            View Documents
-                                            <i class="right fas fa-angle-left"></i>
-                                        </p>
+                                        <p>View Reports</p>
                                     </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="documents-folder" class="nav-link">
-                                                <i class="far fa-folder nav-icon"></i>
-                                                <p>Folders View</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="documents-table" class="nav-link">
-                                                <i class="fas fa-table nav-icon"></i>
-                                                <p>Table View</p>
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a href="add-document" class="nav-link">
                                         <i class="fas fa-file-medical nav-icon"></i>
-                                        <p>Add Document</p>
+                                        <p>Add Report</p>
                                     </a>
                                 </li>
                             </ul>
