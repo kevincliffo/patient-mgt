@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Appointments extends CI_Controller {
+class Clinics extends CI_Controller {
     public function __construct() {
         parent::__construct();
         // $this->load->model('home_model');
@@ -8,39 +8,38 @@ class Appointments extends CI_Controller {
 
     public function index()
 	{
-        $this->load->model('model_appointments');
-        $appointments = $this->model_appointments->getAllAppointmentsExtended();
-        //print_r($appointments);die();
-        $data['appointments'] =  $appointments;
+        $this->load->model('model_clinics');
+        $clinics = $this->model_clinics->getAllClinics();
+        //print_r($clinics);die();
+        $data['clinics'] =  $clinics;
         $this->load->view('includes/header', $data);
-        $this->load->view('view_appointments', $data);
+        $this->load->view('view_clinics', $data);
         $this->load->view('includes/footer', $data);
     }
 
-	public function add_appointment()
+	public function add_clinic()
 	{
-        $this->load->model('model_appointments');
-        $this->load->model('model_patients');
+        $this->load->model('model_clinics');
 
         if($this->input->method(TRUE) == 'GET')
         {
-            $patients = $this->model_patients->getAllPatients();
-            $data['patients'] =  $patients;
-            $data['today'] = date('Y-m-d H:i:s');
+            $data = array();
             $this->load->view('includes/header', $data);
-            $this->load->view('view_add_appointment', $data);
+            $this->load->view('view_add_clinic', $data);
             $this->load->view('includes/footer', $data);
         }
         elseif($this->input->method(TRUE) == 'POST')
         {
             $data = array(
-                'PatientId'       => $this->input->post('patientId'),
-                'Symptoms'        =>  $this->input->post('symptoms')
+                'Name'       => $this->input->post('name'),
+                'Manager'        =>  $this->input->post('manager'),
+                'Location'       => $this->input->post('location'),
+                'PhoneNumber'        =>  $this->input->post('phoneNumber'),
             );
             
-            $this->model_appointments->addAppointment($data);
+            $this->model_clinics->addClinic($data);
                 
-            redirect('add-appointment');
+            redirect('add-clinic');
         }
 	}
 

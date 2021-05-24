@@ -1,22 +1,22 @@
 <?php
-class Model_Appointments extends CI_Model {    
-    function deleteAppointment($id)
+class Model_Clinics extends CI_Model {    
+    function deleteClinic($id)
     {
         $this->db->query("SET sql_mode = '' ");
-        $this->db->where('AppointmentId', $id);
+        $this->db->where('ClinicId', $id);
 
-        $this->db->delete('appointments');
+        $this->db->delete('clinics');
     }
 
-    function getNextAppointmentId()
+    function getNextClinicId()
     { 
         $this->db->query("SET sql_mode = '' ");
-        $sql = 'SELECT MAX(AppointmentId) AS Max_AppointmentId FROM appointments';
+        $sql = 'SELECT MAX(ClinicId) AS Max_ClinicId FROM clinics';
         $result = $this->db->query($sql);
 
         if($result->num_rows() > 0)
         {
-            $count = (int)$result->result()[0]->Max_AppointmentId ;
+            $count = (int)$result->result()[0]->Max_ClinicId ;
         }
         else
         {
@@ -26,10 +26,10 @@ class Model_Appointments extends CI_Model {
         return $count + 1;
     }       
 
-    function getAdminAppointmentsCount()
+    function getAdminClinicsCount()
     { 
         $this->db->query("SET sql_mode = '' ");
-        $sql = "SELECT COUNT(*) AS US_Count FROM appointments WHERE AppointmentType='ADMIN'";
+        $sql = "SELECT COUNT(*) AS US_Count FROM clinics WHERE ClinicType='ADMIN'";
         $result = $this->db->query($sql);
 
         if($result->num_rows() > 0)
@@ -44,10 +44,10 @@ class Model_Appointments extends CI_Model {
         return $count;
     } 
 
-    function getAppointmentsCount()
+    function getClinicsCount()
     { 
         $this->db->query("SET sql_mode = '' ");
-        $sql = 'SELECT COUNT(*) AS US_Count FROM appointments';
+        $sql = 'SELECT COUNT(*) AS US_Count FROM clinics';
         $result = $this->db->query($sql);
 
         if($result->num_rows() > 0)
@@ -62,18 +62,18 @@ class Model_Appointments extends CI_Model {
         return $count;
     }      
     
-    function addAppointment($appointmentdata)
+    function addClinic($clinicdata)
     {
         while(TRUE)
         {
             $this->db->query("SET sql_mode = '' ");
-            $this->db->set('AppointmentDate', 'NOW()', FALSE);
-            $insert = $this->db->insert('appointments', $appointmentdata);
+            $this->db->set('CreatedDate', 'NOW()', FALSE);
+            $insert = $this->db->insert('clinics', $clinicdata);
 
             $res = array(
                 'id'         => 0,
                 'errorFound' => TRUE,
-                'message'    => 'Error Adding Appointment'
+                'message'    => 'Error Adding Clinic'
             );
 
             if($insert)
@@ -81,7 +81,7 @@ class Model_Appointments extends CI_Model {
                 $res = array(
                     'id'         => $this->db->insert_id(),
                     'errorFound' => FALSE,
-                    'message'    => 'Appointment added successfully!'
+                    'message'    => 'Clinic added successfully!'
                 );
             }
             break;
@@ -89,12 +89,12 @@ class Model_Appointments extends CI_Model {
         return $res;
     }
     
-    public function getAppointmentDataOverId($id)
+    public function getClinicDataOverId($id)
     {
         $this->db->query("SET sql_mode = '' ");
-        $this->db->where('AppointmentId', $id);
+        $this->db->where('ClinicId', $id);
 
-        $query = $this->db->get('appointments');
+        $query = $this->db->get('clinics');
 
         if ($query->num_rows() > 0)
         {
@@ -104,12 +104,12 @@ class Model_Appointments extends CI_Model {
         }
     }
 
-    public function getAllAppointments()
+    public function getAllClinics()
     {
         $this->db->query("SET sql_mode = '' ");
         $this->db->select('*'); 
-        $this->db->order_by('AppointmentId', 'ASC');
-        $query = $this->db->get('appointments');
+        $this->db->order_by('ClinicId', 'ASC');
+        $query = $this->db->get('clinics');
         
         if ($query->num_rows() > 0)
         {
@@ -119,22 +119,13 @@ class Model_Appointments extends CI_Model {
         }
     }
 
-    public function getAllAppointmentsExtended()
-    {
-        $this->db->select('*');
-        $this->db->from('appointments');
-        $this->db->join('patients', 'patients.PatientId = appointments.PatientId');
-
-        return $query = $this->db->get()->result_array();
-    }
-
-    public function getTopFiveRecentAppointments()
+    public function getTopFiveRecentClinics()
     {
         $this->db->query("SET sql_mode = '' ");
-        $this->db->order_by('AppointmentId', 'DESC');
+        $this->db->order_by('ClinicId', 'DESC');
         $this->db->limit('5'); 
-        $this->db->order_by('AppointmentId', 'ASC');
-        $query = $this->db->get('appointments');
+        $this->db->order_by('ClinicId', 'ASC');
+        $query = $this->db->get('clinics');
         
         if ($query->num_rows() > 0)
         {

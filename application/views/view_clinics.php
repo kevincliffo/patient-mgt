@@ -5,13 +5,13 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Clients</h1>
+                            <h1 class="m-0 text-dark">Clinics</h1>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
-                                <li class="breadcrumb-item active">Clients</li>
+                                <li class="breadcrumb-item active">Clinics</li>
                             </ol>
                         </div>
                         <!-- /.col -->
@@ -29,7 +29,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Clients Table</h3>
+                                    <h3 class="card-title">Clinics Table</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -38,25 +38,21 @@
                                             <tr>
                                                 <th>id</th>
                                                 <th>Name</th>
-                                                <th>Email</th>
+                                                <th>Manager</th>
+                                                <th>Location</th>
                                                 <th>Telephone</th>
-                                                <th>Client Type</th>
-                                                <th>Contact Person</th>
-                                                <th>Contact Person Email</th>
-                                                <th>Contact Person Telephone</th>
+                                                <th>Created Date</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach($clients as $client){;?>
+                                            <?php foreach($clinics as $clinic){;?>
                                                 <tr>
-                                                    <td><?php echo $client['ClientId'];?></td>
-                                                    <td><?php echo $client['CompanyName'];?></td>
-                                                    <td><?php echo $client['CompanyEmail'];?></td>
-                                                    <td><?php echo $client['CompanyTelephone'];?></td>
-                                                    <td><?php echo $client['ClientType'];?></td>
-                                                    <td><?php echo $client['ContactPersonName'];?></td>
-                                                    <td><?php echo $client['ContactPersonEmail'];?></td>
-                                                    <td><?php echo $client['ContactPersonTelephone'];?></td>
+                                                    <td><?php echo $clinic['ClinicId'];?></td>
+                                                    <td><?php echo $clinic['Name'];?></td>
+                                                    <td><?php echo $clinic['Manager'];?></td>
+                                                    <td><?php echo $clinic['Location'];?></td>
+                                                    <td><?php echo $clinic['PhoneNumber'];?></td>
+                                                    <td><?php echo $clinic['CreatedDate'];?></td>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
@@ -64,12 +60,10 @@
                                             <tr>
                                                 <th>id</th>
                                                 <th>Name</th>
-                                                <th>Email</th>
+                                                <th>Manager</th>
+                                                <th>Location</th>
                                                 <th>Telephone</th>
-                                                <th>Client Type</th>
-                                                <th>Contact Person</th>
-                                                <th>Contact Person Email</th>
-                                                <th>Contact Person Telephone</th>
+                                                <th>Created Date</th>
                                             </tr>
                                         </tfoot>
                                     </table>

@@ -36,7 +36,8 @@
                                     <table id="example2" class="table table-bordered table-hover">
                                         <thead>
                                             <tr>
-                                                <th>id</th>
+                                                <th>Id</th>
+                                                <th>Patient Id</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
                                                 <th>Patient Type</th>
@@ -48,21 +49,19 @@
                                             <?php foreach($appointments as $appointment){;?>
                                                 <tr>
                                                     <td><?php echo $appointment['AppointmentId'];?></td>
+                                                    <td><?php echo $appointment['PatientId'];?></td>
                                                     <td><?php echo $appointment['FirstName'];?></td>
                                                     <td><?php echo $appointment['LastName'];?></td>
-                                                    <td><?php echo $appointment['Email'];?></td>
-                                                    <td><?php echo $appointment['IDNumber'];?></td>
+                                                    <td><?php echo $appointment['PatientType'];?></td>
                                                     <td><?php echo $appointment['Gender'];?></td>
-                                                    <td><?php echo $appointment['AppointmentType'];?></td>
-                                                    <td><?php echo $appointment['DOB'];?></td>
-                                                    <td><?php echo $appointment['MobileNo'];?></td>
-                                                    <td><?php echo $appointment['AppointmentImage'];?></td>
+                                                    <td><?php echo $appointment['AppointmentDate'];?></td>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>id</th>
+                                                <th>Id</th>
+                                                <th>Patient Id</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
                                                 <th>Patient Type</th>

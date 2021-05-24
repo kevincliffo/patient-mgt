@@ -297,13 +297,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="tasks" class="nav-link">
+                                    <a href="clinics" class="nav-link">
                                         <i class="fas fa-clinic-medical nav-icon"></i>
                                         <p>View Clinics</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="add-task" class="nav-link">
+                                    <a href="add-clinic" class="nav-link">
                                         <i class="fas fa-plus nav-icon"></i>
                                         <p>Add Clinic</p>
                                     </a>
