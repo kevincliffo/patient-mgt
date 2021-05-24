@@ -112,24 +112,36 @@ class Model_Consultants extends CI_Model {
         return $count;
     }      
     
+    function consultantExists($practiceNumber){
+        $this->db->query("SET sql_mode = '' ");
+        $this->db->where('PracticeNumber', $practiceNumber);
+        $query = $this->db->get('consultants');
+        
+        if($query->num_rows() > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
     function addConsultant($consultantdata)
     {
         while(TRUE)
         {
-            $consultantExists = $this->consultantExists($consultantdata['Email']);
+            $consultantExists = $this->consultantExists($consultantdata['PracticeNumber']);
 
 
             if($consultantExists)
             {
                 $res = array(
                     'errorFound' => TRUE,
-                    'message'    => 'Email already in use'
+                    'message'    => 'Consultant already exists'
                 );
                 break;
             }
 
             $this->db->query("SET sql_mode = '' ");
-            $this->db->set('CreatedDate', 'NOW()', FALSE);
+            $this->db->set('AddedDate', 'NOW()', FALSE);
             $insert = $this->db->insert('consultants', $consultantdata);
 
             $res = array(

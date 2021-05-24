@@ -28,21 +28,19 @@
                     <div class="row">
                         <div class="card card-secondary col-md-6">
                             <div class="card-header">
-                                <h3 class="card-title">Add User Form</h3>
+                                <h3 class="card-title">Add Consultant Form</h3>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form role="form" action="add-user" method="post" enctype="multipart/form-data">
+                            <form role="form" action="add-consultant" method="post" enctype="multipart/form-data">
                                 <div class="card-body">
-                                    <div class="d-flex justify-content-between">
-                                        <div class="form-group">
-                                            <label for="firstName">First Name</label>
-                                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="lastName">Last Name</label>
-                                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="practiceNumber">Practice Number</label>
+                                        <input type="text" class="form-control" id="practiceNumber" name="practiceNumber" placeholder="Practice Number">
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <div class="form-group">
@@ -50,42 +48,13 @@
                                             <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                                         </div>
                                         <div class="form-group">
-                                            <label for="password">Password</label>
-                                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="form-group">
-                                            <label for="userType">User Type</label>
-                                            <select class="form-control" id="userType" name="userType">
-                                                <option selected="selected" disabled>Select User Type</option>
-                                                <option value="Admin">Admin</option>
-                                                <option value="User">User</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="userName">User Name</label>
-                                            <input type="text" class="form-control" id="userName" name="userName" placeholder="Username">
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="form-group">
-                                            <label for="idNumber">ID Number</label>
-                                            <input type="number" class="form-control" id="idNumber" name="idNumber" placeholder="ID Number">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="mobileNo">Mobile No</label>
-                                            <input type="number" class="form-control" id="mobileNo" name="mobileNo" placeholder="Mobile No">
+                                            <label for="mobileNo">Mobile No.</label>
+                                            <input type="text" class="form-control" id="mobileNo" name="mobileNo" placeholder="Mobile No.">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="profileImage">Profile Image</label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="profileImage" name="profileImage">
-                                                <label class="custom-file-label" for="exampleInputFile">Select Profile Image</label>
-                                            </div>
-                                        </div>
+                                        <label for="field">Field</label>
+                                        <textarea class="form-control" id="field" name="field" placeholder="Field"></textarea>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->

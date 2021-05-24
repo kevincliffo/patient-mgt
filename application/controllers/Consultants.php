@@ -31,18 +31,14 @@ class Consultants extends CI_Controller {
         elseif($this->input->method(TRUE) == 'POST')
         {
             $data = array(
-                'FirstName'    => $this->input->post('firstName'),
-                'LastName'     =>  $this->input->post('lastName'),
-                'Email'        => $this->input->post('email'),
-                'Password'     => md5($this->input->post('password')),
-                'UserName'     =>  $this->input->post('userName'),
-                'UserType'     => $this->input->post('userType'),
-                'ProfileImage' => '',
-                'IDNumber'     => $this->input->post('idNumber'),
-                'MobileNo'     => $this->input->post('mobileNo'),
+                'ConsultantName' => $this->input->post('name'),
+                'PracticeNumber' => $this->input->post('practiceNumber'),
+                'Email'          => $this->input->post('email'),
+                'Field'          => $this->input->post('field'),
+                'MobileNumber'   => $this->input->post('mobileNo'),
             );
 
-            $this->model_consultants->addUser($data);
+            $this->model_consultants->addConsultant($data);
             
             redirect('add-consultant');
         }

@@ -27,7 +27,7 @@ class Home extends CI_Controller {
                 'Email' => 'admin@yahoo.com',			
                 'Password' => md5('1admin@'),
                 'IDNumber' => '00000000',
-                'ProfileImage' => 'admin.png',
+                'ProfileImage' => 'user.jpg',
                 'MobileNo' => '0700000000',
             );        
 
