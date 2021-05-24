@@ -55,6 +55,7 @@ $route['logout'] = 'home/logout';
 $route['register'] = 'home/register';
 $route['login'] = 'home';
 $route['add-user'] = 'users/add_user';
+$route['add-consultant'] = 'consultants/add_consultant';
 $route['users'] = 'users/index';
 $route['add-client'] = 'clients/add_client';
 $route['clients'] = 'clients/index';

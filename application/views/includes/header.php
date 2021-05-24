@@ -225,13 +225,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="users" class="nav-link">
+                                    <a href="consultants" class="nav-link">
                                         <i class="fas fa-users nav-icon"></i>
                                         <p>View Consultants</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="add-user" class="nav-link">
+                                    <a href="add-consultant" class="nav-link">
                                         <i class="fas fa-user-plus nav-icon"></i>
                                         <p>Add Consultant</p>
                                     </a>
