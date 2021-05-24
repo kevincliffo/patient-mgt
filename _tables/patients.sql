@@ -9,5 +9,8 @@ CREATE TABLE patients (
   Email varchar(50),
   MobileNo varchar(50),
   PatientImage varchar(255),
+  UnderlyingCondition text,
+  Address text,
+  Location text,
   CreatedDate datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

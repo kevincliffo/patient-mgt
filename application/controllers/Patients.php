@@ -31,15 +31,18 @@ class Patients extends CI_Controller {
         elseif($this->input->method(TRUE) == 'POST')
         {
             $data = array(
-                'FirstName'    => $this->input->post('firstName'),
-                'LastName'     =>  $this->input->post('lastName'),
-                'IDNumber'     => $this->input->post('idNumber'),
-                'Email'        => $this->input->post('email'),
-                'Gender'       => $this->input->post('gender'),
-                'PatientType'  => $this->input->post('patientType'),
-                'PatientImage' => '',
-                'MobileNo'     => $this->input->post('mobileNo'),
-                'DOB'          => $this->convert_string_to_date($this->input->post('dob'))
+                'FirstName'           => $this->input->post('firstName'),
+                'LastName'            =>  $this->input->post('lastName'),
+                'IDNumber'            => $this->input->post('idNumber'),
+                'Email'               => $this->input->post('email'),
+                'Gender'              => $this->input->post('gender'),
+                'PatientType'         => $this->input->post('patientType'),
+                'PatientImage'        => '',
+                'MobileNo'            => $this->input->post('mobileNo'),
+                'DOB'                 => $this->convert_string_to_date($this->input->post('dob')),
+                'UnderlyingCondition' => $this->input->post('underlyingCondition'),
+                'Address'             => $this->input->post('Address'),
+                'Location'            => $this->input->post('Location')
             );
 
             while(TRUE)
@@ -95,6 +98,16 @@ class Patients extends CI_Controller {
         return $value;
     }
     
+    public function patient_profile()
+    {
+        $this->load->model('model_patients');
+        $data['patient'] = $this->model_patients->getPatientDataOverId(1);
+   
+        $this->load->view('includes/header', $data);
+        $this->load->view('view_patient_profile', $data);
+        $this->load->view('includes/footer', $data);
+    }
+
     function convert_string_to_date($date_string)
     {
         $date = strtotime($date_string);

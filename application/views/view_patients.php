@@ -39,13 +39,13 @@
                                                 <th>id</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
+                                                <th>UnderlyingCondition</th>
                                                 <th>Email</th>
-                                                <th>ID Number</th>
                                                 <th>Gender</th>
                                                 <th>Patient Type</th>
                                                 <th>Date of Birth</th>
-                                                <th>Mobile</th>
                                                 <th>Image</th>
+                                                <th>View Profile</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -54,13 +54,18 @@
                                                     <td><?php echo $patient['PatientId'];?></td>
                                                     <td><?php echo $patient['FirstName'];?></td>
                                                     <td><?php echo $patient['LastName'];?></td>
+                                                    <td><?php echo $patient['UnderlyingCondition'];?></td>
                                                     <td><?php echo $patient['Email'];?></td>
-                                                    <td><?php echo $patient['IDNumber'];?></td>
                                                     <td><?php echo $patient['Gender'];?></td>
                                                     <td><?php echo $patient['PatientType'];?></td>
                                                     <td><?php echo $patient['DOB'];?></td>
-                                                    <td><?php echo $patient['MobileNo'];?></td>
                                                     <td><?php echo $patient['PatientImage'];?></td>
+                                                    <td>
+                                                        <?php
+                                                            echo anchor('patient-profile/'.$patient['PatientId'], 'View Profile');
+                                                            //echo $patient['PatientId'];
+                                                        ?>
+                                                    </td>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
@@ -69,13 +74,13 @@
                                                 <th>id</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
+                                                <th>UnderlyingCondition</th>
                                                 <th>Email</th>
-                                                <th>ID Number</th>
                                                 <th>Gender</th>
                                                 <th>Patient Type</th>
                                                 <th>Date of Birth</th>
-                                                <th>Mobile</th>
                                                 <th>Image</th>
+                                                <th>View Profile</th>
                                             </tr>
                                         </tfoot>
                                     </table>

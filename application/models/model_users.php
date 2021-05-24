@@ -55,7 +55,7 @@ class Model_Users extends CI_Model {
     function validate()
     {
         $this->db->query("SET sql_mode = '' ");        
-        $this->db->select('Email, FirstName, LastName, UserType, UserName');
+        $this->db->select('Email, FirstName, LastName, UserType, UserName, IDNumber, MobileNo, CreatedDate');
         $this->db->where('Email', $this->input->post('email'));
         $this->db->where('Password', md5($this->input->post('password')));
         $query = $this->db->get('users');
@@ -78,6 +78,9 @@ class Model_Users extends CI_Model {
                 'LastName'     => $query->result_array()[0]['LastName'],
                 'UserType'     => $query->result_array()[0]['UserType'],
                 'UserName'     => $query->result_array()[0]['UserName'],
+                'IDNumber'     => $query->result_array()[0]['IDNumber'],
+                'MobileNo'     => $query->result_array()[0]['MobileNo'],
+                'CreatedDate'  => $query->result_array()[0]['CreatedDate'],
                 'ProfileImage' => $profileImage
             );
             
@@ -93,6 +96,9 @@ class Model_Users extends CI_Model {
             'LastName'     => '',
             'UserType'     => '',
             'UserName'     => '',
+            'IDNumber'     => '',
+            'MobileNo'     => '',
+            'CreatedDate'  => '',
             'ProfileImage' => ''
         );
     }

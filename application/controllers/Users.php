@@ -47,4 +47,12 @@ class Users extends CI_Controller {
             redirect('add-user');
         }
 	}
+
+    public function profile()
+    {
+        $data = array();
+        $this->load->view('includes/header', $data);
+        $this->load->view('view_profile', $data);
+        $this->load->view('includes/footer', $data);        
+    }
 }

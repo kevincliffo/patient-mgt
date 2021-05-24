@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'home';
+$route['default_controller'] = 'Home';
 $route['dashboard'] = 'home/dashboard';
 $route['logout'] = 'home/logout';
 $route['register'] = 'home/register';
@@ -60,7 +60,7 @@ $route['add-consultant'] = 'consultants/add_consultant';
 $route['consultants'] = 'consultants/index';
 $route['add-patient'] = 'patients/add_patient';
 $route['patients'] = 'patients/index';
-$route['patient-profile/(:num)'] = 'Patients/patient_profile/$1';
+$route['patient-profile/(:num)'] = 'patients/patient_profile/$1';
 $route['add-appointment'] = 'appointments/add_appointment';
 $route['appointments'] = 'appointments/index';
 $route['add-clinic'] = 'clinics/add_clinic';

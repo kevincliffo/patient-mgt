@@ -97,6 +97,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="underlyingCondition">Underlying Condition</label>
+                                        <textarea class="form-control" id="underlyingCondition" name="underlyingCondition" placeholder="Underlying Condition"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="address">Address</label>
+                                        <textarea class="form-control" id="address" name="address" placeholder="Address"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="location">Location</label>
+                                        <textarea class="form-control" id="location" name="location" placeholder="Location"></textarea>
+                                    </div>
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">
