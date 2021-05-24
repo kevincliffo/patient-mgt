@@ -44,6 +44,7 @@ class Home extends CI_Controller {
         }
         elseif($this->input->method(TRUE) == 'POST')
         {
+            $this->load->model('model_users');
             $data = array(
                 'UserName'  => $this->input->post('userName'),
                 'FirstName' => $this->input->post('firstName'),
@@ -67,7 +68,7 @@ class Home extends CI_Controller {
                 }
                 
                 $data['ProfileImage'] = $ret['fileName'];
-                print_r($data);
+                $this->model_users->addUser($data);
                 break;
             }
         }

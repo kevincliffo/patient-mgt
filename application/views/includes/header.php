@@ -249,13 +249,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="clients" class="nav-link">
+                                    <a href="patients" class="nav-link">
                                         <i class="fas fa-users nav-icon"></i>
                                         <p>View Patients</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="add-client" class="nav-link">
+                                    <a href="add-patient" class="nav-link">
                                         <i class="fas fa-user-plus nav-icon"></i>
                                         <p>Add Patient</p>
                                     </a>
@@ -273,13 +273,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="projects" class="nav-link">
+                                    <a href="appointments" class="nav-link">
                                         <i class="fas fa-tasks nav-icon"></i>
                                         <p>View Appointments</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="add-project" class="nav-link">
+                                    <a href="add-appointment" class="nav-link">
                                         <i class="fas fa-file-medical nav-icon"></i>
                                         <p>Add Appointment</p>
                                     </a>
