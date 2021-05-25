@@ -39,26 +39,14 @@
                         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="index3.html" class="nav-link">Home</a>
+                        <?php
+                            $obj = array('class'=>'nav-link');
+                            echo anchor('dashboard','Home', $obj);
+                        ?>
                     </li>
-                    <li class="nav-item d-none d-sm-inline-block">
+                    <!-- <li class="nav-item d-none d-sm-inline-block">
                         <a href="#" class="nav-link">Contact</a>
-                    </li>
-                    <?php
-                        if($this->session->userdata('showViewMenu') == TRUE){
-                            $this->session->set_userdata('showViewMenu', FALSE);
-                    ?>
-                    <div class="dropdown">
-                        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Views
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <li><a href="folder-structure" class="dropdown-item" type="button">Icons</a></li>
-                            <li><a href="folder-structure-list" class="dropdown-item" type="button">List</a></li>
-                            <li><a href="folder-structure-detail" class="dropdown-item" type="button">Details</a></li>
-                        </ul>
-                    </div>
-                    <?php }?>
+                    </li> -->
                 </ul>
                 <!-- SEARCH FORM -->
                 <form class="form-inline ml-3">
@@ -72,57 +60,6 @@
                     </div>
                 </form>
                 <ul class="navbar-nav ml-auto">
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-comments"></i>
-                        <span class="badge badge-danger navbar-badge">3</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                            <a href="#" class="dropdown-item">
-                                <div class="media">
-                                    <img src="<?php echo base_url(); ?>assets/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                                    <div class="media-body">
-                                        <h3 class="dropdown-item-title">
-                                            Brad Diesel
-                                            <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                        </h3>
-                                        <p class="text-sm">Call me whenever you can...</p>
-                                        <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">
-                                <div class="media">
-                                    <img src="<?php echo base_url(); ?>assets/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                                    <div class="media-body">
-                                        <h3 class="dropdown-item-title">
-                                            John Pierce
-                                            <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                                        </h3>
-                                        <p class="text-sm">I got your message bro</p>
-                                        <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">
-                                <div class="media">
-                                    <img src="<?php echo base_url(); ?>assets/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                                    <div class="media-body">
-                                        <h3 class="dropdown-item-title">
-                                            Nora Silvester
-                                            <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                                        </h3>
-                                        <p class="text-sm">The subject goes here</p>
-                                        <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-                        </div>
-                    </li> -->
                     <!-- Notifications Dropdown Menu -->
                     <li class="nav-item dropdown">
                         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -132,21 +69,15 @@
                         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                             <span class="dropdown-item dropdown-header"><?php echo $this->session->userdata('userName');?></span>
                             <div class="dropdown-divider"></div>
-                            <a href="profile" class="dropdown-item">
-                                <i class="fas fa-user mr-2"></i> Profile
-                            </a>
+                            <?php
+                                $obj = array('class'=>'dropdown-item');
+                                echo anchor('profile','<i class="fas fa-user mr-2"></i> Profile', $obj);
+                            ?>
                             <div class="dropdown-divider"></div>
-                            <a href="logout" class="dropdown-item">
-                                <i class="fas fa-unlock mr-2"></i> Logout
-                                <!-- <span class="float-right text-muted text-sm">12 hours</span> -->
-                            </a>
-                            <!-- <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">
-                                <i class="fas fa-file mr-2"></i> 3 new reports
-                                <span class="float-right text-muted text-sm">2 days</span>
-                            </a> 
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item dropdown-footer">Logout</a>-->
+                            <?php
+                                $obj = array('class'=>'dropdown-item');
+                                echo anchor('logout','<i class="fas fa-unlock mr-2"></i> Logout', $obj);
+                            ?>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -160,11 +91,10 @@
             <!-- Main Sidebar Container -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
-                <a href="dashboard" class="brand-link">
-                    <img src="<?php echo base_url(); ?>assets/images/favicon.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                        style="opacity: .8">
-                    <span class="brand-text font-weight-bold">MEPHI</span>
-                </a>
+                <?php
+                    $obj = array('class'=>'brand-link');
+                    echo anchor('dashboard','<img src="'.base_url().'assets/images/favicon.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"><span class="brand-text font-weight-bold">MEPHI</span>', $obj);
+                ?>                
                 <!-- Sidebar -->
                 <div class="sidebar">
                     <!-- Sidebar user panel (optional) -->
@@ -173,44 +103,35 @@
                             <img src="<?php echo base_url(); ?>user-images/<?php echo $this->session->userdata('profileImage');?>" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
-                            <a href="#" class="d-block"><?php echo $this->session->userdata('userName');?></a>
+                            <?php
+                                $obj = array('class'=>'d-block');
+                                echo anchor('profile', $this->session->userdata('userName'), $obj);
+                            ?>
                         </div>
                     </div>
                     <!-- Sidebar Menu -->
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                            <!-- Add icons to the links using the .nav-icon class
-                                with font-awesome or any other icon font library -->
-                            <!-- <li class="nav-item">
-                                <a href="pages/widgets.html" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>
-                                        Widgets
-                                        <span class="right badge badge-danger">New</span>
-                                    </p>
-                                </a>
-                            </li> -->
                             <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-users"></i>
                                     <p>
                                         Users
                                         <i class="fas fa-angle-left right"></i>
-                                        <!-- <span class="badge badge-info right">6</span> -->
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="users" class="nav-link">
-                                            <i class="fas fa-users nav-icon"></i>
-                                            <p>View Users</p>
-                                        </a>
+                                        <?php
+                                            $obj = array('class'=>'nav-link');
+                                            echo anchor('users','<i class="fas fa-users nav-icon"></i><p>View Users</p>', $obj);
+                                        ?>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="add-user" class="nav-link">
-                                            <i class="fas fa-user-plus nav-icon"></i>
-                                            <p>Add User</p>
-                                        </a>
+                                        <?php
+                                            $obj = array('class'=>'nav-link');
+                                            echo anchor('add-user','<i class="fas fa-user-plus nav-icon"></i><p>Add User</p>', $obj);
+                                        ?>
                                     </li>
                                 </ul>
                             </li>
@@ -220,21 +141,20 @@
                                     <p>
                                         Consultants
                                         <i class="fas fa-angle-left right"></i>
-                                        <!-- <span class="badge badge-info right">6</span> -->
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="consultants" class="nav-link">
-                                            <i class="fas fa-users nav-icon"></i>
-                                            <p>View Consultants</p>
-                                        </a>
+                                        <?php
+                                            $obj = array('class'=>'nav-link');
+                                            echo anchor('consultants', '<i class="fas fa-users nav-icon"></i><p>View Consultants</p>', $obj);
+                                        ?>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="add-consultant" class="nav-link">
-                                            <i class="fas fa-user-plus nav-icon"></i>
-                                            <p>Add Consultant</p>
-                                        </a>
+                                        <?php
+                                            $obj = array('class'=>'nav-link');
+                                            echo anchor('add-consultant', '<i class="fas fa-user-plus nav-icon"></i><p>Add Consultant</p>', $obj);
+                                        ?>
                                     </li>
                                 </ul>
                             </li>
@@ -249,16 +169,16 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="patients" class="nav-link">
-                                            <i class="fas fa-users nav-icon"></i>
-                                            <p>View Patients</p>
-                                        </a>
+                                        <?php
+                                            $obj = array('class'=>'nav-link');
+                                            echo anchor('patients', '<i class="fas fa-users nav-icon"></i><p>View Patients</p>', $obj);
+                                        ?>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="add-patient" class="nav-link">
-                                            <i class="fas fa-user-plus nav-icon"></i>
-                                            <p>Add Patient</p>
-                                        </a>
+                                        <?php
+                                            $obj = array('class'=>'nav-link');
+                                            echo anchor('add-patient', '<i class="fas fa-user-plus nav-icon"></i><p>Add Patient</p>', $obj);
+                                        ?>
                                     </li>
                                 </ul>
                             </li>
@@ -273,16 +193,16 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="appointments" class="nav-link">
-                                            <i class="fas fa-tasks nav-icon"></i>
-                                            <p>View Appointments</p>
-                                        </a>
+                                        <?php
+                                            $obj = array('class'=>'nav-link');
+                                            echo anchor('appointments', '<i class="fas fa-tasks nav-icon"></i><p>View Appointments</p>', $obj);
+                                        ?>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="add-appointment" class="nav-link">
-                                            <i class="fas fa-file-medical nav-icon"></i>
-                                            <p>Add Appointment</p>
-                                        </a>
+                                        <?php
+                                            $obj = array('class'=>'nav-link');
+                                            echo anchor('add-appointment', '<i class="fas fa-file-medical nav-icon"></i><p>Add Appointment</p>', $obj);
+                                        ?>
                                     </li>
                                 </ul>
                             </li>
@@ -297,16 +217,16 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="clinics" class="nav-link">
-                                            <i class="fas fa-clinic-medical nav-icon"></i>
-                                            <p>View Clinics</p>
-                                        </a>
+                                        <?php
+                                            $obj = array('class'=>'nav-link');
+                                            echo anchor('clinics', '<i class="fas fa-clinic-medical nav-icon"></i><p>View Clinics</p>', $obj);
+                                        ?>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="add-clinic" class="nav-link">
-                                            <i class="fas fa-plus nav-icon"></i>
-                                            <p>Add Clinic</p>
-                                        </a>
+                                        <?php
+                                            $obj = array('class'=>'nav-link');
+                                            echo anchor('add-clinic', '<i class="fas fa-plus nav-icon"></i><p>Add Clinic</p>', $obj);
+                                        ?>
                                     </li>
                                 </ul>
                             </li>
