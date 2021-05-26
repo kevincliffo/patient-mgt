@@ -110,8 +110,20 @@ class Home extends CI_Controller {
 
     public function dashboard()
     {
+        $this->load->model('model_consultants');
+        $this->load->model('model_patients');
+        $this->load->model('model_users');
+        $this->load->model('model_appointments');
+        $this->load->model('model_clinics');
+
         $data['title'] = 'Chriscam &#8739; Creative Business & Consultancy';
         $data['faviconpartpath'] = base_url().'images/favicon.png';
+
+        $data['consultants_count'] = $this->model_consultants->getConsultantsCount();
+        $data['patients_count'] = $this->model_patients->getPatientsCount();
+        $data['users_count'] = $this->model_users->getUsersCount();
+        $data['appointments_count'] = $this->model_appointments->getAppointmentsCount();
+        $data['clinics_count'] = $this->model_clinics->getClinicsCount();
 
         $this->load->view('includes/header', $data);
         $this->load->view('view_home', $data);

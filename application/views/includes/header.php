@@ -18,7 +18,7 @@
         <!-- JQVMap -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/jqvmap/jqvmap.min.css">
         <!-- Theme style -->
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/adminlte.min.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/adminlte.css">
         <!-- overlayScrollbars -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
         <!-- Daterange picker -->
@@ -93,7 +93,7 @@
                 <!-- Brand Logo -->
                 <?php
                     $obj = array('class'=>'brand-link');
-                    echo anchor('dashboard','<img src="'.base_url().'assets/images/favicon.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"><span class="brand-text font-weight-bold">MEPHI</span>', $obj);
+                    echo anchor('dashboard','<img src="'.base_url().'assets/images/favicon.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8"><span class="brand-text font-weight-bold">MEPHI</span>', $obj);
                 ?>                
                 <!-- Sidebar -->
                 <div class="sidebar">

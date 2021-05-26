@@ -28031,6 +28031,18 @@ blockquote.quote-gray-dark h6 {
   color: #ffffff;
 }
 
+.bg-purple {
+    background-color: #605ca8 !important;
+}
+
+.bg-lime {
+    background-color: #01ff70 !important;
+}
+
+.bg-orange {
+    background-color: #ff85ab !important;
+}
+
 .bg-secondary {
   background-color: #6c757d !important;
 }
