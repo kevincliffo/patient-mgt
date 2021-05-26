@@ -36,7 +36,10 @@
                                 <div class="icon">
                                     <i class="ion ion-person"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <?php
+                                    $obj = array('class'=>'small-box-footer');
+                                    echo anchor('users', 'More info <i class="fas fa-arrow-circle-right"></i>', $obj);
+                                ?>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -50,7 +53,10 @@
                                 <div class="icon">
                                     <i class="ion ion-person-stalker"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <?php
+                                    $obj = array('class'=>'small-box-footer');
+                                    echo anchor('consultants', 'More info <i class="fas fa-arrow-circle-right"></i>', $obj);
+                                ?>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -64,7 +70,10 @@
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <?php
+                                    $obj = array('class'=>'small-box-footer');
+                                    echo anchor('patients', 'More info <i class="fas fa-arrow-circle-right"></i>', $obj);
+                                ?>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -94,7 +103,10 @@
                                 <div class="icon">
                                     <i class="ion ion-person-stalker"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <?php
+                                    $obj = array('class'=>'small-box-footer');
+                                    echo anchor('appointments', 'More info <i class="fas fa-arrow-circle-right"></i>', $obj);
+                                ?>
                             </div>
                         </div>
                         <!-- ./col -->
@@ -108,7 +120,10 @@
                                 <div class="icon">
                                     <i class="ion ion-medkit"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <?php
+                                    $obj = array('class'=>'small-box-footer');
+                                    echo anchor('clinics', 'More info <i class="fas fa-arrow-circle-right"></i>', $obj);
+                                ?>
                             </div>
                         </div>
                         <!-- ./col -->
