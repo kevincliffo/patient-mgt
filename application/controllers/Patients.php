@@ -41,8 +41,8 @@ class Patients extends CI_Controller {
                 'MobileNo'            => $this->input->post('mobileNo'),
                 'DOB'                 => $this->convert_string_to_date($this->input->post('dob')),
                 'UnderlyingCondition' => $this->input->post('underlyingCondition'),
-                'Address'             => $this->input->post('Address'),
-                'Location'            => $this->input->post('Location')
+                'Address'             => $this->input->post('address'),
+                'Location'            => $this->input->post('location')
             );
 
             while(TRUE)
@@ -98,10 +98,10 @@ class Patients extends CI_Controller {
         return $value;
     }
     
-    public function patient_profile()
+    public function patient_profile($id)
     {
         $this->load->model('model_patients');
-        $data['patient'] = $this->model_patients->getPatientDataOverId(1);
+        $data['patient'] = $this->model_patients->getPatientDataOverId($id);
    
         $this->load->view('includes/header', $data);
         $this->load->view('view_patient_profile', $data);
