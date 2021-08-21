@@ -1,0 +1,9 @@
+References
+Ahmadi-Javid, A., Jalali, Z. and Klassen, K. J., “Outpatient appointment systems in healthcare: A review
+of optimization studies,” European Journal of Operational Research, vol. Accepted, 2016. 
+Campbell, H., Hotchkiss, R., Bradshaw, N. and Porteous, M., “Integrated care pathways,” British Medical
+Journal, vol. 316, no. 7125, pp. 133–7, 1998. 
+Elkhuizen, S. G., Patient oriented logistics: Studies on organizational improvement in an academic
+hospital. s.n.], 2007.
+Matta, M. E. and Patterson, S. S., “Evaluating multiple performance measures across several dimensions
+at a multi-facility outpatient center,” Health Care Management Science, vol. 10, no. 2, pp. 173–194, 2007.
