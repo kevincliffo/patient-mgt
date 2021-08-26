@@ -39,6 +39,15 @@
                                         <input type="text" class="form-control" name="appointmentDate" value="<?php echo $today;?>" readonly/>                                   
                                     </div>
                                     <div class="form-group">
+                                        <label>Appointment Date:</label>
+                                        <div class="input-group date" id="appointmentDate" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" name="dob" data-target="#appointmentDate"/>
+                                            <div class="input-group-append" data-target="#appointmentDate" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>                                    
+                                    </div>                                    
+                                    <div class="form-group">
                                         <label>Patient</label>
                                         <select class="form-control select2" name="patientId" style="width: 100%;">
                                             <option disabled selected="selected">Select Patient</option>

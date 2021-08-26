@@ -51,7 +51,7 @@ class Home extends CI_Controller {
                 'LastName'  => $this->input->post('lastName'),
                 'UserType'  => 'User',
                 'Email'     => $this->input->post('email'),
-                'Password'  => $this->input->post('password'),
+                'Password'  => md5($this->input->post('password')),
                 'IDNumber'  => $this->input->post('idNumber'),
                 'MobileNo'  => $this->input->post('mobileNo')
             );
@@ -71,6 +71,7 @@ class Home extends CI_Controller {
                 $this->model_users->addUser($data);
                 break;
             }
+            redirect('login');
         }
     }
 

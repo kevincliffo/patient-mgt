@@ -158,6 +158,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            <?php if($this->session->userdata('userType') == 'Admin'){?>
                             <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-hospital-user"></i>
@@ -182,6 +183,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            <?php } ?>
                             <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-calendar-check"></i>
@@ -192,20 +194,23 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
+                                    <?php if($this->session->userdata('userType') == 'Admin'){?>
+                                        <li class="nav-item">
+                                            <?php
+                                                $obj = array('class'=>'nav-link');
+                                                echo anchor('appointments', '<i class="fas fa-tasks nav-icon"></i><p>View Appointments</p>', $obj);
+                                            ?>
+                                        </li>
+                                    <?php } ?>
                                     <li class="nav-item">
                                         <?php
                                             $obj = array('class'=>'nav-link');
-                                            echo anchor('appointments', '<i class="fas fa-tasks nav-icon"></i><p>View Appointments</p>', $obj);
-                                        ?>
-                                    </li>
-                                    <li class="nav-item">
-                                        <?php
-                                            $obj = array('class'=>'nav-link');
-                                            echo anchor('add-appointment', '<i class="fas fa-file-medical nav-icon"></i><p>Add Appointment</p>', $obj);
+                                            echo anchor('add-appointment', '<i class="fas fa-file-medical nav-icon"></i><p>Book Appointment</p>', $obj);
                                         ?>
                                     </li>
                                 </ul>
                             </li>
+                            
                             <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-clinic-medical"></i>

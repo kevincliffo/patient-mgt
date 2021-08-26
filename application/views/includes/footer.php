@@ -70,14 +70,14 @@
             </script>
             <script>
                 $(function () {
-                    $('#startDate').datetimepicker({
-                        format: 'L'
+                    $('#appointmentDate').datetimepicker({
+                        format: 'DD-MM-YYYY'
                     });
                     $('#finishDate').datetimepicker({
                         format: 'L'
                     });
                 });
-            </script>
+            </script>          
             <script type="text/javascript">
                 function folderClick($folderPath)
                 {
