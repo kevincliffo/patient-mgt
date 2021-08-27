@@ -33,9 +33,13 @@ class Appointments extends CI_Controller {
         }
         elseif($this->input->method(TRUE) == 'POST')
         {
+            $appointmentDate = strtotime($this->input->post('appointmentDate'));
+            $date = date('Y-m-d', $appointmentDate);
+            //print_r($date);die();
             $data = array(
-                'PatientId'       => $this->input->post('patientId'),
-                'Symptoms'        =>  $this->input->post('symptoms')
+                'PatientId'       =>  $this->session->userdata('userId'),
+                'Symptoms'        =>  $this->input->post('symptoms'),
+                'AppointmentDate' =>  $date
             );
             
             $this->model_appointments->addAppointment($data);

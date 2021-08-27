@@ -26,22 +26,24 @@
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3><?php echo $users_count;?></h3>
-                                    <p>Users</p>
+                        <?php if($this->session->userdata('userType') == 'Admin'){?>
+                            <div class="col-lg-3 col-6">
+                                <!-- small box -->
+                                <div class="small-box bg-info">
+                                    <div class="inner">
+                                        <h3><?php echo $users_count;?></h3>
+                                        <p>Users</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="ion ion-person"></i>
+                                    </div>
+                                    <?php
+                                        $obj = array('class'=>'small-box-footer');
+                                        echo anchor('users', 'More info <i class="fas fa-arrow-circle-right"></i>', $obj);
+                                    ?>
                                 </div>
-                                <div class="icon">
-                                    <i class="ion ion-person"></i>
-                                </div>
-                                <?php
-                                    $obj = array('class'=>'small-box-footer');
-                                    echo anchor('users', 'More info <i class="fas fa-arrow-circle-right"></i>', $obj);
-                                ?>
                             </div>
-                        </div>
+                        <?php }?>
                         <!-- ./col -->
                         <div class="col-lg-3 col-6">
                             <!-- small box -->

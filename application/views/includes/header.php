@@ -112,29 +112,31 @@
                     <!-- Sidebar Menu -->
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                            <li class="nav-item has-treeview">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-users"></i>
-                                    <p>
-                                        Users
-                                        <i class="fas fa-angle-left right"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <?php
-                                            $obj = array('class'=>'nav-link');
-                                            echo anchor('users','<i class="fas fa-users nav-icon"></i><p>View Users</p>', $obj);
-                                        ?>
-                                    </li>
-                                    <li class="nav-item">
-                                        <?php
-                                            $obj = array('class'=>'nav-link');
-                                            echo anchor('add-user','<i class="fas fa-user-plus nav-icon"></i><p>Add User</p>', $obj);
-                                        ?>
-                                    </li>
-                                </ul>
-                            </li>
+                            <?php if($this->session->userdata('userType') == 'Admin'){?>
+                                <li class="nav-item has-treeview">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-users"></i>
+                                        <p>
+                                            Users
+                                            <i class="fas fa-angle-left right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <?php
+                                                $obj = array('class'=>'nav-link');
+                                                echo anchor('users','<i class="fas fa-users nav-icon"></i><p>View Users</p>', $obj);
+                                            ?>
+                                        </li>
+                                        <li class="nav-item">
+                                            <?php
+                                                $obj = array('class'=>'nav-link');
+                                                echo anchor('add-user','<i class="fas fa-user-plus nav-icon"></i><p>Add User</p>', $obj);
+                                            ?>
+                                        </li>
+                                    </ul>
+                                </li>
+                            <?php }?>
                             <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-user-md"></i>

@@ -67,7 +67,7 @@ class Model_Appointments extends CI_Model {
         while(TRUE)
         {
             $this->db->query("SET sql_mode = '' ");
-            $this->db->set('AppointmentDate', 'NOW()', FALSE);
+            //$this->db->set('AppointmentDate', 'NOW()', FALSE);
             $insert = $this->db->insert('appointments', $appointmentdata);
 
             $res = array(
