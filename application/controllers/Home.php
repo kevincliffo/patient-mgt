@@ -157,6 +157,9 @@ class Home extends CI_Controller {
 
                 $name = $ret['FirstName']. ' '. $ret['LastName'];
                 $this->session->set_userdata('name', $name);
+                $this->session->set_userdata('firstName', $ret['FirstName']);
+                $this->session->set_userdata('lastName', $ret['LastName']);
+                $this->session->set_userdata('name', $name);
                 $this->session->set_userdata('userId', $ret['UserId']);
                 $this->session->set_userdata('userName', $ret['UserName']);
                 $this->session->set_userdata('email', $ret['Email']);

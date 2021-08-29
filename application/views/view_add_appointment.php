@@ -45,13 +45,13 @@
                                     </div>
                                     <div class="form-group d-flex justify-content-between">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="patientType" id="radioSelf">
+                                            <input class="form-check-input" type="radio" name="patientType" id="radioSelf" onclick="radioClick('radioSelf');">
                                             <label class="form-check-label" for="radioSelf">
                                                 Self
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="patientType" id="radioOther" checked>
+                                            <input class="form-check-input" type="radio" name="patientType" id="radioOther" onclick="radioClick('radioOther');" checked>
                                             <label class="form-check-label" for="radioOther">
                                                 Other
                                             </label>

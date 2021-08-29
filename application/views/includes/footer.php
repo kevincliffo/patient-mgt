@@ -79,20 +79,30 @@
                 });
             </script>          
             <script type="text/javascript">
-                function folderClick($folderPath)
+                function radioClick(key)
                 {
-                    var base_url = "<?php echo base_url(); ?>";
-                                
-                    console.log('val : ' + $folderPath);
-                    $.ajax({
-                        url: base_url + 'documents/folder_structure_list_json/',
-                        type: 'post',
-                        data: {folderPath : $folderPath},
-                        dataType: 'json',
-                        success:function(response) {
-                            location.reload();
-                        }
-                    });
+                    var inputFirstName = document.getElementById("firstName");
+                    var inputLastName = document.getElementById("lastName");
+                    var inputMobile = document.getElementById("mobileNo");
+                    var inputIDNumber = document.getElementById("idNumber");
+
+                    inputFirstName.value = '';
+                    inputLastName.value = '';
+                    inputMobile.value = '';
+                    inputIDNumber.value = '';
+
+                    console.log(key);
+                    switch (key) {
+                        case "radioSelf":
+                            inputFirstName.value = "<?php echo $this->session->userdata('firstName');?>"
+                            inputLastName.value = "<?php echo $this->session->userdata('lastName');?>"
+                            inputMobile.value = "<?php echo $this->session->userdata('mobileNo');?>"
+                            inputIDNumber.value = "<?php echo $this->session->userdata('idNumber');?>"
+                            break;
+                    
+                        case "radioOther":
+                            break;
+                    }
                 }                
             </script>        
             <script>
