@@ -42,11 +42,31 @@
                                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                             </div>
                                         </div>                                    
-                                    </div>                                    
-                                    <div class="form-group">
-                                        <label>Patient</label>
-                                        <input type="text" name="name" id="name" class="form-control" value="<?php echo $this->session->userdata('name');?>" readonly>
                                     </div>
+                                    <div class="form-group d-flex justify-content-between">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="patientType" id="radioSelf">
+                                            <label class="form-check-label" for="radioSelf">
+                                                Self
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="patientType" id="radioOther" checked>
+                                            <label class="form-check-label" for="radioOther">
+                                                Other
+                                            </label>
+                                        </div>                                        
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="form-group">
+                                            <label for="firstName">First Name</label>
+                                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastName">Last Name</label>
+                                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+                                        </div>
+                                    </div>                                    
                                     <div class="form-group">
                                         <label for="symptoms">Symptoms</label>
                                         <textarea class="form-control" id="symptoms" name="symptoms" placeholder="Symptoms"></textarea>
