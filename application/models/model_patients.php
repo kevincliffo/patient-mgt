@@ -220,6 +220,22 @@ class Model_Patients extends CI_Model {
         }
     } 
 
+    public function getYourPatients()
+    {
+        $this->db->query("SET sql_mode = '' ");
+        $this->db->select('*');
+        $this->db->where('AddedBy', $this->session->userdata('userId'));
+        $this->db->order_by('PatientId', 'ASC');
+        $query = $this->db->get('patients');
+        
+        if ($query->num_rows() > 0)
+        {
+            return $query->result_array();
+        } else {
+            return array();
+        }
+    } 
+
     public function getAllPatients()
     {
         $this->db->query("SET sql_mode = '' ");

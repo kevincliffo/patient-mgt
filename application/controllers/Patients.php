@@ -30,9 +30,17 @@ class Patients extends CI_Controller {
         }
         elseif($this->input->method(TRUE) == 'POST')
         {
+            $nextPatientId = $this->model_patients->getNextPatientId();
+            $patientIdentifier = 'PAT-'
+                               . date('Y')
+                               .'-'
+                               . str_pad($nextPatientId, 6, "0", STR_PAD_LEFT);
+
             $data = array(
+                'AddedBy'             => $this->session->userdata('userId'),
+                'PatientIdentifier'   => $patientIdentifier,
                 'FirstName'           => $this->input->post('firstName'),
-                'LastName'            =>  $this->input->post('lastName'),
+                'LastName'            => $this->input->post('lastName'),
                 'IDNumber'            => $this->input->post('idNumber'),
                 'Email'               => $this->input->post('email'),
                 'Gender'              => $this->input->post('gender'),
@@ -117,4 +125,13 @@ class Patients extends CI_Controller {
         $timestamp = $date_object;
         return $timestamp;
     }
+
+	public function getPatientOverPatientId()
+	{
+        $this->load->model('model_patients');
+        $patientID = $this->input->post('PatientId');
+
+		$patient = $this->model_patients->getPatientDataOverId($patientID);
+		echo json_encode($patient);
+    }    
 }

@@ -22,11 +22,19 @@ class Appointments extends CI_Controller {
         $this->load->model('model_appointments');
         $this->load->model('model_patients');
 
+        $nextPatientId = $this->model_patients->getNextPatientId();
+        $patientIdentifier = 'PAT-'
+                           . date('Y')
+                           .'-'
+                           . str_pad($nextPatientId, 6, "0", STR_PAD_LEFT);
+
         if($this->input->method(TRUE) == 'GET')
         {
-            $patients = $this->model_patients->getAllPatients();
+            $patients = $this->model_patients->getYourPatients();
+            
             $data['patients'] =  $patients;
-            $data['today'] = date('Y-m-d H:i:s');
+            $data['patientIdentifier'] = $patientIdentifier;
+
             $this->load->view('includes/header', $data);
             $this->load->view('view_add_appointment', $data);
             $this->load->view('includes/footer', $data);
@@ -35,18 +43,47 @@ class Appointments extends CI_Controller {
         {
             $appointmentDate = strtotime($this->input->post('appointmentDate'));
             $date = date('Y-m-d', $appointmentDate);
-            //print_r($date);die();
+            
             $data = array(
-                'PatientId'       =>  $this->session->userdata('userId'),
-                'Symptoms'        =>  $this->input->post('symptoms'),
-                'AppointmentDate' =>  $date
+                'PatientIdentifier'=>  $this->input->post('symptoms'),
+                'Symptoms'        =>   $this->input->post('symptoms'),
+                'AppointmentDate' =>   $date
             );
             
+            $patient_type = $this->input->post('patientType');
             $this->model_appointments->addAppointment($data);
+
+            if($patient_type == 'New')
+            {
+                $thi->add_patient_to_database($patientIdentifier);
+            }
                 
+          
             redirect('add-appointment');
         }
 	}
+
+    function add_patient_to_database($patientIdentifier)
+    {
+        $data = array(
+            'AddedBy'             => $this->session->userdata('userId'),
+            'PatientIdentifier'   => $patientIdentifier,
+            'FirstName'           => $this->input->post('firstName'),
+            'LastName'            =>  $this->input->post('lastName'),
+            'IDNumber'            => $this->input->post('idNumber'),
+            'Email'               => $this->input->post('email'),
+            'Gender'              => $this->input->post('gender'),
+            'PatientType'         => $this->input->post('patientType'),
+            'PatientImage'        => '',
+            'MobileNo'            => $this->input->post('mobileNo'),
+            'Age'                 => $this->input->post('age'),
+            'UnderlyingCondition' => $this->input->post('underlyingCondition'),
+            'Address'             => $this->input->post('address'),
+            'Location'            => $this->input->post('location')
+        );
+        $this->load->model('model_patients');        
+        $this->model_patients->addPatient($data);
+    }
 
     function convert_string_to_date($date_string)
     {

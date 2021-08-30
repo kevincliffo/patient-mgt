@@ -44,6 +44,7 @@
                                                 <th>User Type</th>
                                                 <th>ID Number</th>
                                                 <th>Mobile</th>
+                                                <th>Profile</th>                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -57,6 +58,7 @@
                                                     <td><?php echo $user['UserType'];?></td>
                                                     <td><?php echo $user['IDNumber'];?></td>
                                                     <td><?php echo $user['MobileNo'];?></td>
+                                                    <td><?php echo anchor('users/user-profile/'.$user['UserId'], 'View Profile');?></td>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
@@ -70,6 +72,7 @@
                                                 <th>User Type</th>
                                                 <th>ID Number</th>
                                                 <th>Mobile</th>
+                                                <th>Profile</th>
                                             </tr>
                                         </tfoot>
                                     </table>

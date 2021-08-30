@@ -26,25 +26,25 @@
                     <div class="card card-primary card-outline">
                         <div class="card-body box-profile">
                             <div class="text-center">
-                                <img src="<?php echo base_url(); ?>user-images/<?php echo $this->session->userdata('profileImage');?>" 
+                                <img src="<?php echo base_url(); ?>user-images/<?php echo $user[0]['ProfileImage'];?>" 
                                     class="profile-user-img img-fluid img-circle" 
                                     alt="User Image">
                             </div>
-                            <h3 class="profile-username text-center"><?php echo $this->session->userdata('name');?></h3>
-                            <p class="text-muted text-center"><?php echo $this->session->userdata('userType');?></p>
-                            <p class="text-muted text-center"><?php echo $this->session->userdata('createdDate');?></p>
+                            <h3 class="profile-username text-center"><?php echo $user[0]['FirstName'].' '.$user[0]['LastName']?></h3>
+                            <p class="text-muted text-center"><?php echo $user[0]['UserType'];?></p>
+                            <p class="text-muted text-center"><?php echo $user[0]['CreatedDate'];?></p>
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
-                                    <b>User Name</b> <a class="float-right"><?php echo $this->session->userdata('userName');?></a>
+                                    <b>User Name</b> <a class="float-right"><?php echo $user[0]['UserName'];?></a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Email</b> <a class="float-right"><?php echo $this->session->userdata('email');?></a>
+                                    <b>Email</b> <a class="float-right"><?php echo $user[0]['Email'];?></a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>ID Number</b> <a class="float-right"><?php echo $this->session->userdata('idNumber');?></a>
+                                    <b>ID Number</b> <a class="float-right"><?php echo $user[0]['IDNumber'];?></a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Mobile No.</b> <a class="float-right"><?php echo $this->session->userdata('mobileNo');?></a>
+                                    <b>Mobile No.</b> <a class="float-right"><?php echo $user[0]['MobileNo'];?></a>
                                 </li>
                             </ul>
                         </div>
@@ -60,15 +60,15 @@
                         <div class="card-body">
                             <strong><i class="fas fa-book mr-1"></i> Address</strong>
                             <p class="text-muted">
-                                <?php echo $this->session->userdata('address');?>
+                                <?php echo $user[0]['Address'];?>
                             </p>
                             <hr>
                             <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
-                            <p class="text-muted"><?php echo $this->session->userdata('location');?></p>
+                            <p class="text-muted"><?php echo $user[0]['Location'];?></p>
                             <hr>
                             <strong><i class="fas fa-pencil-alt mr-1"></i> Underlying Conditions</strong>
                             <p class="text-muted">
-                                <span class="tag tag-info"><?php echo $this->session->userdata('underlyingCondition');?></span>
+                                <span class="tag tag-info"><?php echo $user[0]['UnderlyingCondition'];?></span>
                             </p>
                             <hr>
                         </div>

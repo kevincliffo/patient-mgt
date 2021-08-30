@@ -68,9 +68,67 @@
                     });
                 });
             </script>
+            <script type="text/javascript">
+                function togglePatientsDropDown()
+                {
+
+                    var patientType = document.getElementById("patientType");
+                    if(patientType.value == 'New')
+                    {
+                        var patients_div = document.getElementById('patients-div');
+                        patients_div.style.display= "none";
+                    }
+                    else
+                    {
+                        var patients_div = document.getElementById('patients-div');
+                        patients_div.style.display= "block";
+                    }
+                }
+            </script>
+            <script type="text/javascript">
+                function userSelected()
+                {
+                    var patient = document.getElementById("patients");
+                    var base_url = "<?php echo base_url(); ?>";
+                    var firstName = document.getElementById("firstName");
+                    var lastName = document.getElementById("lastName");
+                    var mobileNo = document.getElementById("mobileNo");
+                    var idNumber = document.getElementById("idNumber");
+                    var gender = document.getElementById("gender");
+                    var dob = document.getElementById("dob");
+
+                    var address = document.getElementById("address");
+                    var location = document.getElementById("location");
+                    var underlyingCondition = document.getElementById("underlyingCondition");
+                    var patientIdentifier = document.getElementById("patientIdentifier");
+
+                    $.ajax({
+                        url: base_url + 'patients/getPatientOverPatientId/',
+                        type: 'post',
+                        data: {PatientId : patient.value},
+                        dataType: 'json',
+                        success:function(response) {
+                            console.log(response);
+                            patientIdentifier.value = response[0].PatientIdentifier;
+                            firstName.value = response[0].FirstName;
+                            lastName.value = response[0].LastName;
+                            mobileNo.value = response[0].MobileNo;
+                            idNumber.value = response[0].IDNumber;
+                            gender.value = response[0].Gender;
+                            dob.value = response[0].DOB;
+                            address.value = response[0].Address;
+                            location.value = response[0].Location;
+                            underlyingCondition.value = response[0].underlyingCondition;
+                        }
+                    });
+                }
+            </script>
             <script>
                 $(function () {
                     $('#appointmentDate').datetimepicker({
+                        format: 'DD-MM-YYYY'
+                    });
+                    $('#dob').datetimepicker({
                         format: 'DD-MM-YYYY'
                     });
                     $('#finishDate').datetimepicker({
@@ -90,8 +148,7 @@
                     inputLastName.value = '';
                     inputMobile.value = '';
                     inputIDNumber.value = '';
-
-                    console.log(key);
+                    
                     switch (key) {
                         case "radioSelf":
                             inputFirstName.value = "<?php echo $this->session->userdata('firstName');?>"

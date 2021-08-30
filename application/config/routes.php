@@ -61,6 +61,7 @@ $route['consultants'] = 'consultants/index';
 $route['add-patient'] = 'patients/add_patient';
 $route['patients'] = 'patients/index';
 $route['patient-profile/(:num)'] = 'Patients/patient_profile/$1';
+$route['user-profile/(:num)'] = 'Users/user_profile/$1';
 $route['add-appointment'] = 'appointments/add_appointment';
 $route['appointments'] = 'appointments/index';
 $route['add-clinic'] = 'clinics/add_clinic';

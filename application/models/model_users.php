@@ -51,11 +51,11 @@ class Model_Users extends CI_Model {
 
         $this->db->delete('users');
     }
-
+    
     function validate()
     {
         $this->db->query("SET sql_mode = '' ");        
-        $this->db->select('UserId, Email, FirstName, LastName, UserType, UserName, IDNumber, MobileNo, CreatedDate');
+        $this->db->select('UserId, Email, FirstName, LastName, UserType, UserName, IDNumber, ProfileImage, MobileNo, Address, Location, UnderlyingCondition, CreatedDate');
         $this->db->where('Email', $this->input->post('email'));
         $this->db->where('Password', md5($this->input->post('password')));
         $query = $this->db->get('users');
@@ -81,6 +81,9 @@ class Model_Users extends CI_Model {
                 'UserName'     => $query->result_array()[0]['UserName'],
                 'IDNumber'     => $query->result_array()[0]['IDNumber'],
                 'MobileNo'     => $query->result_array()[0]['MobileNo'],
+                'Address'     => $query->result_array()[0]['Address'],
+                'Location'     => $query->result_array()[0]['Location'],
+                'UnderlyingCondition'     => $query->result_array()[0]['UnderlyingCondition'],
                 'CreatedDate'  => $query->result_array()[0]['CreatedDate'],
                 'ProfileImage' => $profileImage
             );

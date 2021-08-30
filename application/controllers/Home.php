@@ -18,7 +18,7 @@ class Home extends CI_Controller {
             {
                 break;
             }
-
+            
             $userdata = array(
                 'UserName' => 'admin',
                 'FirstName' => 'Admin',
@@ -29,11 +29,26 @@ class Home extends CI_Controller {
                 'IDNumber' => '00000000',
                 'ProfileImage' => 'user.jpg',
                 'MobileNo' => '0700000000',
+                'Gender'   => 'FEMALE',
+                'DOB'      => '1995-01-01 08:00:00',
+                'UnderlyingCondition' => '',
+                'Address'  => '6725-80100 Mombasa',
+                'Location' => 'Mombasa'
             );        
 
             $query = $this->model_users->addUser($userdata);
             break;
         }
+    }
+
+    function convert_string_to_date($date_string)
+    {
+        $date = strtotime($date_string);
+        $date_object = date('Y-m-d H:i:s', $date);
+        
+        //$date_object->setTimezone(new DateTimeZone('Africa/Nairobi'));        
+        $timestamp = $date_object;
+        return $timestamp;
     }
 
     public function register()
@@ -50,10 +65,15 @@ class Home extends CI_Controller {
                 'FirstName' => $this->input->post('firstName'),
                 'LastName'  => $this->input->post('lastName'),
                 'UserType'  => 'User',
+                'Gender'       => $this->input->post('gender'),
                 'Email'     => $this->input->post('email'),
                 'Password'  => md5($this->input->post('password')),
                 'IDNumber'  => $this->input->post('idNumber'),
-                'MobileNo'  => $this->input->post('mobileNo')
+                'MobileNo'  => $this->input->post('mobileNo'),
+                'Location'  => $this->input->post('location'),
+                'Address'  => $this->input->post('address'),
+                'DOB'          => $this->convert_string_to_date('dob'),
+                'UnderlyingCondition' => $this->input->post('underlyingCondition'),
             );
 
             while(TRUE)
@@ -166,6 +186,9 @@ class Home extends CI_Controller {
                 $this->session->set_userdata('userType', $ret['UserType']);
                 $this->session->set_userdata('idNumber', $ret['IDNumber']);
                 $this->session->set_userdata('mobileNo', $ret['MobileNo']);
+                $this->session->set_userdata('address', $ret['Address']);
+                $this->session->set_userdata('location', $ret['Location']);
+                $this->session->set_userdata('underlyingCondition', $ret['UnderlyingCondition']);
                 $this->session->set_userdata('createdDate', $ret['CreatedDate']);
                 $this->session->set_userdata('profileImage', $ret['ProfileImage']);
                 $this->session->set_userdata('loggedIn', TRUE);

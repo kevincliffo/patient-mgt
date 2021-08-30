@@ -78,6 +78,39 @@
                                             <input type="number" class="form-control" id="mobileNo" name="mobileNo" placeholder="Mobile No">
                                         </div>
                                     </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="form-group">
+                                            <label for="gender">Gender</label>
+                                            <select class="form-control" id="gender" name="gender">
+                                                <option selected="selected" disabled>Select Gender</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Male">Male</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Date of Birth:</label>
+                                            <div class="input-group date" id="dob" data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input" name="dob" data-target="#dob"/>
+                                                <div class="input-group-append" data-target="#dob" data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                    <div class="d-flex justify-content-between">
+                                        <div class="form-group">
+                                            <label for="address">Address</label>
+                                            <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="location">Location</label>
+                                            <input type="text" class="form-control" id="location" name="location" placeholder="Location">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="underlyingCondition">Underlying Condition</label>
+                                        <input type="text" class="form-control" id="underlyingCondition" name="underlyingCondition" placeholder="Underlying Condition">
+                                    </div>
                                     <div class="form-group">
                                         <label for="profileImage">Profile Image</label>
                                         <div class="input-group">

@@ -1,5 +1,7 @@
 CREATE TABLE patients (
   PatientId int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  AddedBy int(11) NOT NULL,
+  PatientIdentifier varchar(50) NOT NULL,
   FirstName varchar(50) NOT NULL,
   LastName varchar(50) NOT NULL,
   IDNumber varchar(50) NOT NULL,

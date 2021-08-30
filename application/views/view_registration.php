@@ -104,6 +104,52 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select class="form-control" id="gender" name="gender">
+                                    <option selected="selected" disabled>Select Gender</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Male">Male</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Date of Birth:</label>
+                                <div class="input-group date" id="appointmentDate" data-target-input="nearest">
+                                    <input type="text" class="form-control datetimepicker-input" name="dob" data-target="#dob"/>
+                                    <div class="input-group-append" data-target="#dob" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="d-flex justify-content-between">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" required id="location" name="location" placeholder="Location">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-location-arrow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            &nbsp;
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" required id="address" name="address" placeholder="Address">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-address-card"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <textarea class="form-control" name="underlyingCondition" id="underlyingCondition" cols="30" rows="5" placeholder="Underlying Condition"></textarea>
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-pencil-alt"></span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="custom-file">

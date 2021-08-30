@@ -73,16 +73,15 @@
                                             <label for="patientType">Patient Type</label>
                                             <select class="form-control" id="patientType" name="patientType">
                                                 <option selected="selected" disabled>Select Patient Type</option>
-                                                <option value="Baby">Baby</option>
-                                                <option value="Child">Child</option>
-                                                <option value="Adult">Adult</option>
+                                                <option value="New">New</option>
+                                                <option value="Revisit">Revisit</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Date of Birth:</label>
-                                            <div class="input-group date" id="startDate" data-target-input="nearest">
-                                                <input type="text" class="form-control datetimepicker-input" name="dob" data-target="#startDate"/>
-                                                <div class="input-group-append" data-target="#startDate" data-toggle="datetimepicker">
+                                            <div class="input-group date" id="dob" data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input" name="dob" data-target="#dob"/>
+                                                <div class="input-group-append" data-target="#dob" data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                 </div>
                                             </div>                                    

@@ -33,7 +33,31 @@
                             <!-- /.card-header -->
                             <!-- form start -->
                             <form role="form" action="add-appointment" method="post" enctype="multipart/form-data">
+                                <center>
+                                    <code style="font-weight:600;font-size:20px;"><?php echo $patientIdentifier; ?></code>
+                                </center>
+                                <input type="hidden" name="patientIdentifier" id="patientIdentifier" value="<?php echo $patientIdentifier;?>">
                                 <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="patientType">Patient Type</label>
+                                        <select class="form-control" id="patientType" name="patientType" onChange="togglePatientsDropDown();">
+                                            <option selected="selected" disabled>Select Patient Type</option>
+                                            <option value="New">New</option>
+                                            <option value="Revisit">Revisit</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" id="patients-div" style="display:none;">
+                                        <label for="patients">Patients</label>
+                                        <select class="form-control" id="patients" name="patients" onChange="userSelected();">
+                                            <option selected="selected" disabled>Select Patient</option>
+                                            <?php
+                                                foreach($patients as $patient)
+                                                {
+                                                    echo '<option value="'.$patient['PatientId'].'">'.$patient['PatientIdentifier'].' - '.$patient['FirstName'].' '.$patient['LastName'].'</option>';
+                                                }
+                                            ?>
+                                        </select>
+                                    </div>
                                     <div class="form-group">
                                         <label>Appointment Date:</label>
                                         <div class="input-group date" id="appointmentDate" data-target-input="nearest">
@@ -43,6 +67,17 @@
                                             </div>
                                         </div>                                    
                                     </div>
+                                    <div class="form-group">
+                                        <label for="gender">Appointment Type</label>
+                                        <select class="form-control" id="gender" name="gender">
+                                            <option selected="selected" disabled>Select Appointment Type</option>
+                                            <option value="ENT">ENT</option>
+                                            <option value="Gyn">Gyn</option>
+                                            <option value="OPD">OPD</option>
+                                            <option value="LAB">LAB</option>
+                                            <option value="General">General</option>
+                                        </select>
+                                    </div>                                    
                                     <div class="form-group d-flex justify-content-between">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="patientType" id="radioSelf" onclick="radioClick('radioSelf');">
@@ -88,33 +123,22 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Date of Birth:</label>
-                                            <div class="input-group date" id="startDate" data-target-input="nearest">
-                                                <input type="text" class="form-control datetimepicker-input" name="dob" data-target="#startDate"/>
-                                                <div class="input-group-append" data-target="#startDate" data-toggle="datetimepicker">
+                                            <div class="input-group date" id="dob" data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input" name="dob" data-target="#dob"/>
+                                                <div class="input-group-append" data-target="#dob" data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="form-group">
-                                            <label for="patientType">Patient Type</label>
-                                            <select class="form-control" id="patientType" name="patientType">
-                                                <option selected="selected" disabled>Select Patient Type</option>
-                                                <option value="Baby">Baby</option>
-                                                <option value="Child">Child</option>
-                                                <option value="Adult">Adult</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="patientImage">Patient Image</label>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="patientImage" name="patientImage">
-                                                    <label class="custom-file-label" for="exampleInputFile">Select Image</label>
-                                                </div>
-                                            </div>                                    
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="patientImage">Patient Image</label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="patientImage" name="patientImage">
+                                                <label class="custom-file-label" for="exampleInputFile">Select Image</label>
+                                            </div>
+                                        </div>                                    
                                     </div>
                                     <div class="form-group">
                                         <label for="address">Address</label>
