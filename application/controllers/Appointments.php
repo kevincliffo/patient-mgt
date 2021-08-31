@@ -45,20 +45,22 @@ class Appointments extends CI_Controller {
             $date = date('Y-m-d', $appointmentDate);
             
             $data = array(
-                'PatientIdentifier'=>  $this->input->post('symptoms'),
+                'PatientIdentifier'=>  $this->input->post('patientIdentifier'),
                 'Symptoms'        =>   $this->input->post('symptoms'),
-                'AppointmentDate' =>   $date
+                'AppointmentDate' =>   $date,
+                'PatientFirstName' =>  $this->input->post('firstName'),
+                'PatientLastName' =>   $this->input->post('lastName'),
+                'PatientType'     =>   $this->input->post('patientType'),
+                'AppointmentType' =>   $this->input->post('appointmentType'),
             );
-            
-            $patient_type = $this->input->post('patientType');
+
             $this->model_appointments->addAppointment($data);
 
-            if($patient_type == 'New')
+            if($this->input->post('patientType') == 'New')
             {
-                $thi->add_patient_to_database($patientIdentifier);
+                $this->add_patient_to_database($this->input->post('patientIdentifier'));
             }
                 
-          
             redirect('add-appointment');
         }
 	}
@@ -76,13 +78,13 @@ class Appointments extends CI_Controller {
             'PatientType'         => $this->input->post('patientType'),
             'PatientImage'        => '',
             'MobileNo'            => $this->input->post('mobileNo'),
-            'Age'                 => $this->input->post('age'),
+            'DOB'                 => $this->convert_string_to_date($this->input->post('dob')),
             'UnderlyingCondition' => $this->input->post('underlyingCondition'),
             'Address'             => $this->input->post('address'),
             'Location'            => $this->input->post('location')
         );
         $this->load->model('model_patients');        
-        $this->model_patients->addPatient($data);
+        $ret = $this->model_patients->addPatient($data);
     }
 
     function convert_string_to_date($date_string)

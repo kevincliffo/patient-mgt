@@ -52,7 +52,7 @@ class Users extends CI_Controller {
                 'MobileNo'     => $this->input->post('mobileNo'),
                 'Location'     => $this->input->post('location'),
                 'Address'      => $this->input->post('address'),
-                'DOB'          => $this->convert_string_to_date('dob'),
+                'DOB'          => $this->convert_string_to_date($this->input->post('dob')),
                 'UnderlyingCondition' => $this->input->post('underlyingCondition')
             );
 

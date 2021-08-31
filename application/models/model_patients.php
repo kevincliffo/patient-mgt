@@ -155,18 +155,6 @@ class Model_Patients extends CI_Model {
     {
         while(TRUE)
         {
-            $patientExists = $this->patientExists($patientdata['Email']);
-
-
-            if($patientExists)
-            {
-                $res = array(
-                    'errorFound' => TRUE,
-                    'message'    => 'Email already in use'
-                );
-                break;
-            }
-
             $this->db->query("SET sql_mode = '' ");
             $this->db->set('CreatedDate', 'NOW()', FALSE);
             $insert = $this->db->insert('patients', $patientdata);
