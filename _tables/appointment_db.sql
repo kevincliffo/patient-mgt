@@ -116,7 +116,7 @@ CREATE TABLE `patients` (
 --
 
 INSERT INTO `patients` (`PatientId`, `FirstName`, `LastName`, `IDNumber`, `Gender`, `PatientType`, `DOB`, `Email`, `MobileNo`, `PatientImage`, `UnderlyingCondition`, `Address`, `Location`, `CreatedDate`) VALUES
-(1, 'Anne', 'Njeri', '34332312', 'Female', 'Adult', '1997-05-14 00:00:00', 'anne.njeri@yahoo.com', '0724113456', 'products3.jpg', '', '', '', '2021-05-24 15:51:36');
+(1, 'Anne', 'Njeri', '34332312', 'FEMALE', 'Adult', '1997-05-14 00:00:00', 'anne.njeri@yahoo.com', '0724113456', 'products3.jpg', '', '', '', '2021-05-24 15:51:36');
 
 -- --------------------------------------------------------
 

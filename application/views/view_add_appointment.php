@@ -68,8 +68,8 @@
                                         </div>                                    
                                     </div>
                                     <div class="form-group">
-                                        <label for="gender">Appointment Type</label>
-                                        <select class="form-control" id="gender" name="gender">
+                                        <label for="appointmentType">Appointment Type</label>
+                                        <select class="form-control" id="appointmentType" name="appointmentType">
                                             <option selected="selected" disabled>Select Appointment Type</option>
                                             <option value="ENT">ENT</option>
                                             <option value="Gyn">Gyn</option>
@@ -117,14 +117,14 @@
                                             <label for="gender">Gender</label>
                                             <select class="form-control" id="gender" name="gender">
                                                 <option selected="selected" disabled>Select Gender</option>
-                                                <option value="Female">Female</option>
-                                                <option value="Male">Male</option>
+                                                <option value="FEMALE">FEMALE</option>
+                                                <option value="MALE">MALE</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Date of Birth:</label>
                                             <div class="input-group date" id="dob" data-target-input="nearest">
-                                                <input type="text" class="form-control datetimepicker-input" name="dob" data-target="#dob"/>
+                                                <input type="text" class="form-control datetimepicker-input" id="dateOfBirth" name="dob" data-target="#dob"/>
                                                 <div class="input-group-append" data-target="#dob" data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                 </div>

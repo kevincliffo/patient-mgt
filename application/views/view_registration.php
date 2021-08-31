@@ -109,8 +109,8 @@
                                 <label for="gender">Gender</label>
                                 <select class="form-control" id="gender" name="gender">
                                     <option selected="selected" disabled>Select Gender</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Male">Male</option>
+                                    <option value="FEMALE">FEMALE</option>
+                                    <option value="MALE">MALE</option>
                                 </select>
                             </div>
                             <div class="form-group">

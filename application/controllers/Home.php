@@ -188,6 +188,8 @@ class Home extends CI_Controller {
                 $this->session->set_userdata('mobileNo', $ret['MobileNo']);
                 $this->session->set_userdata('address', $ret['Address']);
                 $this->session->set_userdata('location', $ret['Location']);
+                $this->session->set_userdata('gender', $ret['Gender']);
+                $this->session->set_userdata('dob', $ret['DOB']);
                 $this->session->set_userdata('underlyingCondition', $ret['UnderlyingCondition']);
                 $this->session->set_userdata('createdDate', $ret['CreatedDate']);
                 $this->session->set_userdata('profileImage', $ret['ProfileImage']);

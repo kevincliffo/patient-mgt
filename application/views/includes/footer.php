@@ -95,20 +95,18 @@
                     var mobileNo = document.getElementById("mobileNo");
                     var idNumber = document.getElementById("idNumber");
                     var gender = document.getElementById("gender");
-                    var dob = document.getElementById("dob");
-
+                    var dob = document.getElementById("dateOfBirth");
                     var address = document.getElementById("address");
                     var location = document.getElementById("location");
                     var underlyingCondition = document.getElementById("underlyingCondition");
                     var patientIdentifier = document.getElementById("patientIdentifier");
-
+                    
                     $.ajax({
                         url: base_url + 'patients/getPatientOverPatientId/',
                         type: 'post',
                         data: {PatientId : patient.value},
                         dataType: 'json',
                         success:function(response) {
-                            console.log(response);
                             patientIdentifier.value = response[0].PatientIdentifier;
                             firstName.value = response[0].FirstName;
                             lastName.value = response[0].LastName;
@@ -139,22 +137,40 @@
             <script type="text/javascript">
                 function radioClick(key)
                 {
+                    console.log(key);
                     var inputFirstName = document.getElementById("firstName");
                     var inputLastName = document.getElementById("lastName");
                     var inputMobile = document.getElementById("mobileNo");
                     var inputIDNumber = document.getElementById("idNumber");
+                    var gender = document.getElementById("gender");
+                    var dob = document.getElementById("dateOfBirth");
+                    var address = document.getElementById("address");
+                    var location = document.getElementById("location");
+                    var underlyingCondition = document.getElementById("underlyingCondition");
+                    var patientIdentifier = document.getElementById("patientIdentifier");
 
                     inputFirstName.value = '';
                     inputLastName.value = '';
                     inputMobile.value = '';
                     inputIDNumber.value = '';
-                    
+                    gender.value = '';
+                    dob.value = '';
+                    address.value = '';
+                    location.value = '';
+                    underlyingCondition.value = '';
+                    patientIdentifier.value = '';
+
                     switch (key) {
                         case "radioSelf":
                             inputFirstName.value = "<?php echo $this->session->userdata('firstName');?>"
                             inputLastName.value = "<?php echo $this->session->userdata('lastName');?>"
                             inputMobile.value = "<?php echo $this->session->userdata('mobileNo');?>"
                             inputIDNumber.value = "<?php echo $this->session->userdata('idNumber');?>"
+                            gender.value = "<?php echo $this->session->userdata('gender');?>"
+                            dob.value = "<?php echo $this->session->userdata('dob');?>"
+                            address.value = "<?php echo $this->session->userdata('address');?>"
+                            location.value = "<?php echo $this->session->userdata('location');?>"
+                            underlyingCondition.value = "<?php echo $this->session->userdata('UnderlyingCondition');?>"
                             break;
                     
                         case "radioOther":
