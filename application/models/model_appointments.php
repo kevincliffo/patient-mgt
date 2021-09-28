@@ -123,7 +123,7 @@ class Model_Appointments extends CI_Model {
     {
         $this->db->select('*');
         $this->db->from('appointments');
-        $this->db->join('patients', 'patients.PatientId = appointments.PatientId');
+        $this->db->join('patients', 'patients.PatientIdentifier = appointments.PatientIdentifier');
 
         return $query = $this->db->get()->result_array();
     }
